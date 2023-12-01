@@ -45,7 +45,7 @@ const ThemeSettingsPage = () => {
         <div className="text-center mb-4">
           <p className="text-lg">
             <i className="fas fa-eye mr-2"></i>
-            Default theme is Black Explore and apply different themes:
+            Default theme is <span className='text xl font-bold'>Dim</span> Explore and apply different themes:
           </p>
         </div>
         <ThemeSwitcher />

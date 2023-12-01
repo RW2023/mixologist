@@ -17,7 +17,7 @@ const Navbar = () => {
           <span className="font-semibold text-xl tracking-tight cursor-pointer">
             <div>
               {/* <i className="fas fa-globe mr-2"></i> */}
-              <Heading title="Mixologist" />
+              <Heading title="Mixologist" iconClass="fas fa-cocktail" />
             </div>
           </span>
         </Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
         <div className="text-sm lg:flex-grow">
           <Link href={'/drinks'}>
             <span className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl hover:text-strokeDark mr-4 cursor-pointer">
-              <i className="fas fa-newspaper mr-2"></i>Drinks
+              <i className="fas fa-wine-bottle mr-2"></i>Drinks
             </span>
           </Link>
           <Link href="/about">

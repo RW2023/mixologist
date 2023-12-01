@@ -1,25 +1,27 @@
-//src/Components/UI/Heading.tsx
+// src/Components/UI/Heading.tsx
 'use client';
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 
 interface Props {
   title: string;
+  iconClass?: string;
 }
 
-const Heading: FC<Props> = (props): JSX.Element => {
-  // State to manage the theme
-  const [theme, setTheme] = useState('luxury'); // Default theme
+// Function to convert text to title case
+const toTitleCase = (text: string): string =>
+  text.replace(
+    /\w\S*/g,
+    (word) => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase(),
+  );
 
-  // Function to handle theme change
-  const handleThemeChange = (newTheme: string) => {
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  };
+const Heading: FC<Props> = ({ title, iconClass }): JSX.Element => {
+  const titleCaseText = toTitleCase(title);
 
   return (
-    <div>
-      <h1 className="text-center font-poppins text-2xl m-8 font-bold">{props.title}</h1>
-    </div>
+    <h1 className="text-center font-poppins text-4xl m-8 font-bold flex justify-center items-center">
+      {iconClass && <i className={`${iconClass} mr-2`}></i>}
+      {titleCaseText}
+    </h1>
   );
 };
 

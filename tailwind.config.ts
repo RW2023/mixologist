@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   daisyui: {
-    themes: true,
+    themes: true, // Enables all DaisyUI themes
   },
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,6 +9,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class', // Enables Tailwind's dark mode using the 'class' strategy
   theme: {
     extend: {
       colors: {
@@ -25,10 +26,10 @@ module.exports = {
         tertiary: '#000000',
       },
       fontFamily: {
-        sans: ['Poppins', 'sans'],
+        sans: ['Poppins', 'sans-serif'],
         serif: ['Roboto Slab', 'serif'],
       },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [require('daisyui')], // Includes DaisyUI plugin
 };

@@ -5,7 +5,6 @@ function Custom404() {
   return (
     <div
       className="min-h-screen flex items-center justify-center text-center bg-secondary"
-      data-theme="retro"
     >
       <div className="card bordered p-10 shadow-2xl bg-base-100">
         <h1 className="text-4xl font-bold mb-4">

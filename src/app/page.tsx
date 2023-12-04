@@ -4,8 +4,9 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center w-full">
+    <div className="flex flex-col items-center justify-center min-h-screen container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Added bottom margin for all views */}
+      <div className="mt-16 md:mt-0 mb-16 grid grid-cols-1 md:grid-cols-2 gap-4 text-center w-full">
         <div>
           <Heading title="cheers" iconClass="fas fa-wine-bottle" />
           <SubHeading
@@ -39,8 +40,6 @@ export default function Home() {
             height={500}
             className="rounded-lg border-2 border-base-300 bg-base-200 p-2"
           />
-        </div>
-        <div className="divider">
         </div>
       </div>
     </div>

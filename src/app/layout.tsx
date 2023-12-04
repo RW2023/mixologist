@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/Components/ui/Navbar';
@@ -13,19 +14,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const authorName = 'Ryan Wilson'; 
+  const currentYear = new Date().getFullYear(); // Dynamically gets the current year
+
   return (
     <html lang="en" data-theme="retro">
-      <header>
+      <head>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
-      </header>
+      </head>
       <body>
         <Navbar />
         {children}
-        </body>
-        <Footer />
+        <Footer authorName={authorName} year={currentYear} />
+      </body>
     </html>
   );
 }

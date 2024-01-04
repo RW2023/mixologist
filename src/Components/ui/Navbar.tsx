@@ -70,7 +70,7 @@ const Navbar = () => {
         } w-full lg:flex lg:items-center lg:w-auto lg:justify-end`}
       >
         <div className="text-sm lg:flex-grow">
-          <Link href={'/drinks'}>
+          <Link href={'/search'}>
             <span className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl hover:text-strokeDark mr-4 cursor-pointer">
               <i className="fas fa-wine-bottle mr-2"></i>Drinks
             </span>

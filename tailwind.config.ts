@@ -27,7 +27,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        serif: ['Roboto Slab', 'serif'],
+        serif: ['Roboto Slab', 'sans-serif'],
       },
     },
   },

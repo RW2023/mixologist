@@ -90,11 +90,11 @@ const Navbar = () => {
               <i className="fas fa-envelope mr-2"></i>Contact
             </span>
           </Link>
-          <Link href="/themes">
+          {/* <Link href="/themes">
             <span className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl hover:text-buttonText cursor-pointer mr-2 border-base-300 ease-in-out transition-transform">
               <i className="fas fa-palette mr-2"></i>Themes
             </span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

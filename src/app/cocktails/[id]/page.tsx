@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Loading from '@/Components/ui/Loading';
 import Pending from '@/Components/ui/Pending';
 import Heading from '@/Components/ui/Heading';
+import SubHeading from '@/Components/ui/SubHeading';
 
 
 // Define the interface for a Cocktail object
@@ -13,6 +14,9 @@ interface Cocktail {
   strDrink: string;
   strDrinkThumb: string;
   strInstructions: string;
+  strCategory: string;
+  strAlcoholic: string;
+  strGlass: string;
   // Include other properties as needed
 }
 
@@ -50,9 +54,7 @@ export default function CocktailDetailsPage({
 
   return (
     <div className="container mx-auto p-4 md:w-3/4 lg:w-4/5 min-h-screen">
-      <div className="text-3xl flex flex-col justify-center items-center">
-        <h2>{cocktailDetails.strDrink}</h2>
-      </div>
+      <Heading title={cocktailDetails.strDrink} iconClass="fas fa-cocktail" />
       <div className="card-compact bg-base-100 shadow-xl">
         <figure className="p-4">
           <Image
@@ -64,11 +66,27 @@ export default function CocktailDetailsPage({
             className="rounded-xl border border-base-300 bg-base-100 p-1"
           />
         </figure>
-        <div className="card-body bg-base-300 border rounded-md">
-          <h2 className="card-title text-2xl font-bold">
-            {cocktailDetails.strDrink}
-          </h2>
-          <p className="text-lg">{cocktailDetails.strInstructions}</p>
+        <div className="card-body bg-base-300 border rounded-md drop-shadow-2xl">
+          <SubHeading
+            title={cocktailDetails.strDrink}
+            iconClass="fas fa-cocktail"
+          />
+          <p>
+            <i className="fas fa-list mr-2"></i>
+            <strong>Category:</strong> {cocktailDetails.strCategory}
+          </p>
+          <p>
+            <i className="fas fa-wine-glass-alt mr-2"></i>
+            <strong>Type:</strong> {cocktailDetails.strAlcoholic}
+          </p>
+          <p>
+            <i className="fas fa-glass-martini-alt mr-2"></i>
+            <strong>Glass:</strong> {cocktailDetails.strGlass}
+          </p>
+          <p>
+            <i className="fas fa-book mr-2"></i>
+            <strong>Instructions:</strong> {cocktailDetails.strInstructions}
+          </p>
           {/* Display other details as needed */}
         </div>
       </div>

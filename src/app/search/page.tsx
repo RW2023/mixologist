@@ -91,18 +91,7 @@ export default function SearchDrinks() {
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{drink.strDrink}</h2>
-                <p>
-                  <strong>Category:</strong> {drink.strCategory}
-                </p>
-                <p>
-                  <strong>Type:</strong> {drink.strAlcoholic}
-                </p>
-                <p>
-                  <strong>Glass:</strong> {drink.strGlass}
-                </p>
-                <p>
-                  <strong>Instructions:</strong> {drink.strInstructions}
-                </p>
+              
                 {/* Add components to display ingredients and measures */}
               </div>
             </div>

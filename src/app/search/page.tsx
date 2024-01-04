@@ -3,13 +3,18 @@
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
+import Loading from '@/Components/ui/Loading';
 
+// Define the interface for a Drink object
 interface Drink {
   idDrink: string;
   strDrink: string;
   strDrinkThumb: string;
   strInstructions: string;
-  // Include other properties as needed
+  strCategory: string;
+  strAlcoholic: string;
+  strGlass: string;
+  // Add properties for ingredients and measures
 }
 
 export default function SearchDrinks() {
@@ -38,44 +43,52 @@ export default function SearchDrinks() {
 
   return (
     <div className="container mx-auto p-4">
-      <form onSubmit={handleSearch} className="mb-4">
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Enter an ingredient:</span>
-          </label>
-          <input
-            type="text"
-            placeholder="e.g., Vodka"
-            className="input input-bordered w-full max-w-xs"
-            value={ingredient}
-            onChange={(e) => setIngredient(e.target.value)}
-          />
-        </div>
+      <form onSubmit={handleSearch} className="mb-8 flex justify-center">
+        <input
+          type="text"
+          placeholder="e.g., Vodka"
+          className="input input-bordered input-primary w-full max-w-xs mr-2"
+          value={ingredient}
+          onChange={(e) => setIngredient(e.target.value)}
+        />
         <button
           type="submit"
-          className={`btn btn-primary mt-2 ${isLoading ? 'loading' : ''}`}
+          className={`btn btn-primary ${isLoading ? <Loading /> : ''}`}
         >
           Search
         </button>
       </form>
 
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="text-red-500 text-center">{error}</p>}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-screen" data-theme="business">
         {drinks.map((drink) => (
           <div key={drink.idDrink} className="card card-bordered">
-            <figure>
+            <figure className="p-4">
               <Image
                 src={drink.strDrinkThumb}
                 alt={drink.strDrink}
                 layout="responsive"
                 width={500}
                 height={500}
+                className="rounded-xl"
               />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{drink.strDrink}</h2>
-              <p>{drink.strInstructions}</p>
+              <p>
+                <strong>Category:</strong> {drink.strCategory}
+              </p>
+              <p>
+                <strong>Type:</strong> {drink.strAlcoholic}
+              </p>
+              <p>
+                <strong>Glass:</strong> {drink.strGlass}
+              </p>
+              <p>
+                <strong>Instructions:</strong> {drink.strInstructions}
+              </p>
+              {/* Add components to display ingredients and measures */}
             </div>
           </div>
         ))}

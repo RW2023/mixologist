@@ -13,6 +13,9 @@ interface Cocktail {
   strDrink: string;
   strDrinkThumb: string;
   strInstructions: string;
+  strCategory: string;
+  strAlcoholic: string;
+  strGlass: string;
   // Include other properties as needed
 }
 
@@ -68,7 +71,18 @@ export default function CocktailDetailsPage({
           <h2 className="card-title text-2xl font-bold">
             {cocktailDetails.strDrink}
           </h2>
-          <p className="text-lg">{cocktailDetails.strInstructions}</p>
+          <p>
+            <strong>Category:</strong> {cocktailDetails.strCategory}
+          </p>
+          <p>
+            <strong>Type:</strong> {cocktailDetails.strAlcoholic}
+          </p>
+          <p>
+            <strong>Glass:</strong> {cocktailDetails.strGlass}
+          </p>
+          <p>
+            <strong>Instructions:</strong> {cocktailDetails.strInstructions}
+          </p>
           {/* Display other details as needed */}
         </div>
       </div>

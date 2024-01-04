@@ -18,7 +18,7 @@ export default function RootLayout({
   const currentYear = new Date().getFullYear(); // Dynamically gets the current year
 
   return (
-    <html lang="en" data-theme="retro">
+    <html lang="en" data-theme="halloween">
       <head>
         <link
           rel="stylesheet"

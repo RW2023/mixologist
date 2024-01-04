@@ -1,18 +1,22 @@
+//src/Components/ui/Navbar.tsx
 'use client';
-
 import { useState } from 'react';
 import Link from 'next/link';
 import Heading from '@/Components/ui/Heading';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav
-      className="flex items-center justify-between flex-wrap p-3 navbar mt-3 sticky top-0 z-50 bg-base-200 mb-1 shadow-2xl"
+      className="flex items-center justify-between flex-wrap p-3 navbar mt-3 sticky top-0 z-20 bg-base-300 opacity-90 mb-0 shadow-2xl"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="flex items-center flex-shrink-0 text-2xl mr-6">
+        <div className="mr-2">
+
+        </div>
         <Link href="/">
           <span className="font-semibold text-xl tracking-tight cursor-pointer">
             <div>

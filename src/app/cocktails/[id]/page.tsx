@@ -50,7 +50,7 @@ export default function CocktailDetailsPage({
 
   return (
     <div className="container mx-auto p-4 md:w-3/4 lg:w-4/5 min-h-screen">
-      <div className='text-3xl flex flex-col justify-center items-center'>
+      <div className="text-3xl flex flex-col justify-center items-center">
         <h2>{cocktailDetails.strDrink}</h2>
       </div>
       <div className="card-compact bg-base-100 shadow-xl">
@@ -61,7 +61,7 @@ export default function CocktailDetailsPage({
             width={500}
             height={500}
             layout="responsive"
-            className="rounded-lg p-1 bg-accent border-2 border-base-300"
+            className="rounded-xl border border-base-300 bg-base-100 p-1"
           />
         </figure>
         <div className="card-body bg-base-300 border rounded-md">

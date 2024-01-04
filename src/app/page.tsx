@@ -1,6 +1,7 @@
 import Heading from '@/Components/ui/Heading';
 import SubHeading from '@/Components/ui/SubHeading';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -27,9 +28,12 @@ export default function Home() {
               enthusiasts and beginners, our platform offers a fun and
               interactive way to enhance your mixology skills.
             </p>
-            <button type="button" className="btn rounded-lg text-3xl">
+            <Link href="/search">
+            <button
+             type="button" className="btn rounded-lg text-3xl">
               Enter the Bar
             </button>
+            </Link>
           </div>
         </div>
         <div className="inline-block max-w-xs mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">

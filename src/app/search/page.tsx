@@ -1,8 +1,8 @@
-//src/app/ingredients/page.tsx
 'use client';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
+import Link from 'next/link';
 import Loading from '@/Components/ui/Loading';
 
 // Define the interface for a Drink object
@@ -53,44 +53,53 @@ export default function SearchDrinks() {
         />
         <button
           type="submit"
-          className={`btn btn-primary ${isLoading ? <Loading /> : ''}`}
+          className={`btn btn-primary ${isLoading ? 'loading' : ''}`}
         >
-          Search
+          {isLoading ? <Loading /> : 'Search'}
         </button>
       </form>
 
       {error && <p className="text-red-500 text-center">{error}</p>}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-screen" data-theme="business">
+      <div
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-screen"
+        data-theme="business"
+      >
         {drinks.map((drink) => (
-          <div key={drink.idDrink} className="card card-bordered">
-            <figure className="p-4">
-              <Image
-                src={drink.strDrinkThumb}
-                alt={drink.strDrink}
-                layout="responsive"
-                width={500}
-                height={500}
-                className="rounded-xl"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{drink.strDrink}</h2>
-              <p>
-                <strong>Category:</strong> {drink.strCategory}
-              </p>
-              <p>
-                <strong>Type:</strong> {drink.strAlcoholic}
-              </p>
-              <p>
-                <strong>Glass:</strong> {drink.strGlass}
-              </p>
-              <p>
-                <strong>Instructions:</strong> {drink.strInstructions}
-              </p>
-              {/* Add components to display ingredients and measures */}
+          <Link
+            key={drink.idDrink}
+            href={`/cocktails/${drink.idDrink}`}
+            passHref
+          >
+            <div className="card card-bordered cursor-pointer">
+              <figure className="p-4">
+                <Image
+                  src={drink.strDrinkThumb}
+                  alt={drink.strDrink}
+                  layout="responsive"
+                  width={500}
+                  height={500}
+                  className="rounded-xl"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{drink.strDrink}</h2>
+                <p>
+                  <strong>Category:</strong> {drink.strCategory}
+                </p>
+                <p>
+                  <strong>Type:</strong> {drink.strAlcoholic}
+                </p>
+                <p>
+                  <strong>Glass:</strong> {drink.strGlass}
+                </p>
+                <p>
+                  <strong>Instructions:</strong> {drink.strInstructions}
+                </p>
+                {/* Add components to display ingredients and measures */}
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

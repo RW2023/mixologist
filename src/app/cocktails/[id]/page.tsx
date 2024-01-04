@@ -55,7 +55,7 @@ export default function CocktailDetailsPage({
   return (
     <div className="container mx-auto p-4 md:w-3/4 lg:w-4/5 min-h-screen">
       <Heading title={cocktailDetails.strDrink} iconClass="fas fa-cocktail" />
-      <div className="card-compact bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl">
         <figure className="p-4">
           <Image
             src={cocktailDetails.strDrinkThumb}

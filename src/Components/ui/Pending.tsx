@@ -10,7 +10,7 @@ const Pending: FC<Props> = (props): JSX.Element => {
           <span className="m-2">
             <span className="loading loading-bars loading-lg min-"></span>
           </span>{' '}
-       Results....?🍹
+       checking 🍹database ....?
         </p>
       </div>
     </div>

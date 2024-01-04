@@ -1,3 +1,4 @@
+// src/components/SearchDrinks.tsx
 'use client';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
@@ -64,6 +65,12 @@ export default function SearchDrinks() {
       <div
         className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-screen rounded-2xl"
         data-theme="dark"
+        style={{
+          backgroundImage: `url('/images/barBackground.png')`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}
       >
         {drinks.map((drink) => (
           <Link

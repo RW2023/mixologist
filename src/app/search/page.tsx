@@ -62,8 +62,8 @@ export default function SearchDrinks() {
       {error && <p className="text-red-500 text-center">{error}</p>}
 
       <div
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-screen"
-        data-theme="business"
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-screen rounded-2xl"
+        data-theme="dark"
       >
         {drinks.map((drink) => (
           <Link
@@ -71,7 +71,7 @@ export default function SearchDrinks() {
             href={`/cocktails/${drink.idDrink}`}
             passHref
           >
-            <div className="card card-bordered cursor-pointer">
+            <div className="card-compact card-bordered cursor-pointer bg-base-300 rounded-lg m-2 border border-headline drop-shadow-2xl">
               <figure className="p-4">
                 <Image
                   src={drink.strDrinkThumb}
@@ -79,7 +79,7 @@ export default function SearchDrinks() {
                   layout="responsive"
                   width={500}
                   height={500}
-                  className="rounded-xl"
+                  className="rounded-xl border border-base-300 bg-base-100 p-1"
                 />
               </figure>
               <div className="card-body">

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import Loading from '@/Components/ui/Loading';
+import Pending from '@/Components/ui/Pending';
 
 // Define the interface for a Cocktail object
 interface Cocktail {
@@ -43,7 +44,7 @@ export default function CocktailDetailsPage({
 
   if (isLoading) return <Loading />;
   if (error) return <div>Error: {error}</div>;
-  if (!cocktailDetails) return <div className='min-h-screen'>Details Pending...</div>;
+  if (!cocktailDetails) return <Pending />;
 
   return (
     <div className="container mx-auto p-4 md:w-3/4 lg:w-4/5 min-h-screen">
@@ -55,10 +56,10 @@ export default function CocktailDetailsPage({
             width={500}
             height={500}
             layout="responsive"
-            className="rounded-lg"
+            className="rounded-lg p-1 bg-accent border-2 border-base-300"
           />
         </figure>
-        <div className="card-body">
+        <div className="card-body bg-base-300 border rounded-md">
           <h2 className="card-title text-2xl font-bold">
             {cocktailDetails.strDrink}
           </h2>

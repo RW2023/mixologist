@@ -10,7 +10,6 @@ interface Cocktail {
   strDrink: string;
   strDrinkThumb: string;
   strInstructions: string;
-  
   // Include other properties as needed
 }
 
@@ -45,7 +44,14 @@ export default function CocktailDetailsPage({ params }: { params: { id: string }
   return (
     <div>
       <h1>{cocktailDetails.strDrink}</h1>
-      <Image src={cocktailDetails.strDrinkThumb} alt={cocktailDetails.strDrink} />
+      <Image
+        src={cocktailDetails.strDrinkThumb}
+        alt={cocktailDetails.strDrink}
+        width={500} // Specify the width
+        height={500} // Specify the height
+        layout="responsive"
+      />
+
       <p>{cocktailDetails.strInstructions}</p>
       {/* Display other details as needed */}
     </div>

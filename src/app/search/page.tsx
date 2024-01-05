@@ -1,4 +1,3 @@
-// src/components/SearchDrinks.tsx
 'use client';
 import { useState, useEffect, FormEvent } from 'react';
 import axios from 'axios';
@@ -6,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Loading from '@/Components/ui/Loading';
 
-// Define the interface for a Drink object
 interface Drink {
   idDrink: string;
   strDrink: string;
@@ -15,7 +13,7 @@ interface Drink {
   strCategory: string;
   strAlcoholic: string;
   strGlass: string;
-  // Add properties for ingredients and measures
+  // Additional properties
 }
 
 export default function SearchDrinks() {
@@ -23,7 +21,9 @@ export default function SearchDrinks() {
   const [drinks, setDrinks] = useState<Drink[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [noResultsMessage, setNoResultsMessage] = useState('');
 
+     
    useEffect(() => {
      const savedDrinks = localStorage.getItem('drinks');
      if (savedDrinks) {
@@ -35,6 +35,7 @@ export default function SearchDrinks() {
     event.preventDefault();
     setIsLoading(true);
     setError('');
+    setNoResultsMessage('');
 
     try {
       const response = await axios.get(
@@ -45,7 +46,7 @@ export default function SearchDrinks() {
         localStorage.setItem('drinks', JSON.stringify(response.data.drinks));
       } else {
         setDrinks([]);
-        setError('');
+        setNoResultsMessage('No results found for the specified ingredient.');
       }
     } catch (error) {
       setError('Failed to fetch drinks. Please try again.');
@@ -74,6 +75,9 @@ export default function SearchDrinks() {
       </form>
 
       {error && <p className="text-red-500 text-center">{error}</p>}
+      {!isLoading && noResultsMessage && (
+        <p className="text-red-500 text-center">{noResultsMessage}</p>
+      )}
 
       <div
         className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-screen rounded-2xl"
@@ -104,7 +108,6 @@ export default function SearchDrinks() {
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{drink.strDrink}</h2>
-              
                 {/* Add components to display ingredients and measures */}
               </div>
             </div>

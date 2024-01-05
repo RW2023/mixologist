@@ -28,7 +28,7 @@ export default async function handler(
     };
 
     const response = await axios.request(options);
-    res.status(200).json(response.data);
+    res.status(200).json(response.data || []);
   } catch (error) {
     console.error(error);
     res

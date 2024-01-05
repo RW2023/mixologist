@@ -29,17 +29,24 @@ export default function SearchDrinks() {
     setIsLoading(true);
     setError('');
 
-    try {
-      const response = await axios.get(
-        `/api/searchCocktails?ingredient=${ingredient}`,
-      );
-      setDrinks(response.data.drinks || []);
-    } catch (error) {
-      setError('Failed to fetch drinks. Please try again.');
-      console.error('Error fetching drinks:', error);
-    } finally {
-      setIsLoading(false);
-    }
+ try {
+   const response = await axios.get(
+     `/api/searchCocktails?ingredient=${ingredient}`,
+   );
+   // Check if the response contains the drinks array
+   if (response.data.drinks && Array.isArray(response.data.drinks)) {
+     setDrinks(response.data.drinks);
+   } else {
+     setDrinks([]); // Set to empty array if no drinks are found
+     setError('No results found for the specified ingredient.');
+   }
+ } catch (error) {
+   setError('Failed to fetch drinks. Please try again.');
+   console.error('Error fetching drinks:', error);
+ } finally {
+   setIsLoading(false);
+ }
+
   };
 
   return (

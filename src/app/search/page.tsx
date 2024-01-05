@@ -1,6 +1,6 @@
 // src/components/SearchDrinks.tsx
 'use client';
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -24,29 +24,35 @@ export default function SearchDrinks() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
+   useEffect(() => {
+     const savedDrinks = localStorage.getItem('drinks');
+     if (savedDrinks) {
+       setDrinks(JSON.parse(savedDrinks));
+     }
+   }, []);
+
   const handleSearch = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
     setError('');
 
- try {
-   const response = await axios.get(
-     `/api/searchCocktails?ingredient=${ingredient}`,
-   );
-   // Check if the response contains the drinks array
-   if (response.data.drinks && Array.isArray(response.data.drinks)) {
-     setDrinks(response.data.drinks);
-   } else {
-     setDrinks([]); // Set to empty array if no drinks are found
-     setError('No results found for the specified ingredient.');
-   }
- } catch (error) {
-   setError('Failed to fetch drinks. Please try again.');
-   console.error('Error fetching drinks:', error);
- } finally {
-   setIsLoading(false);
- }
-
+    try {
+      const response = await axios.get(
+        `/api/searchCocktails?ingredient=${ingredient}`,
+      );
+      if (response.data.drinks && Array.isArray(response.data.drinks)) {
+        setDrinks(response.data.drinks);
+        localStorage.setItem('drinks', JSON.stringify(response.data.drinks));
+      } else {
+        setDrinks([]);
+        setError('');
+      }
+    } catch (error) {
+      setError('Failed to fetch drinks. Please try again.');
+      console.error('Error fetching drinks:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

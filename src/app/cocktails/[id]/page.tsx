@@ -53,7 +53,7 @@ export default function CocktailDetailsPage({
       if (ingredient) {
         ingredients.push(
           <p key={i}>
-            <i className="fas fa-lemon mr-2"></i>
+            <i className="fas fa-check mr-2"></i>
             {ingredient}
           </p>,
         );

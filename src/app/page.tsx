@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen container mx-auto px-4 sm:px-6 lg:px-8">
       {/* Added bottom margin for all views */}
       <div className="mt-16 md:mt-0 mb-16 grid grid-cols-1 md:grid-cols-2 gap-4 text-center w-full">
-        <div className='border drop-shadow-sm rounded-lg p-2 flex flex-col '>
+        <div className="border drop-shadow-sm rounded-lg p-2 flex flex-col ">
           <Heading title="cheers" iconClass="fas fa-wine-bottle" />
           <SubHeading
             title="Search for your favorite cocktail!"
@@ -29,10 +29,12 @@ export default function Home() {
               interactive way to enhance your mixology skills.
             </p>
             <Link href="/search">
-            <button
-             type="button" className="btn btn-primary rounded-lg text-3xl">
-              Enter the Bar
-            </button>
+              <button
+                type="button"
+                className="btn btn-primary rounded-lg text-3xl"
+              >
+                Enter the Bar
+              </button>
             </Link>
           </div>
         </div>
@@ -42,7 +44,7 @@ export default function Home() {
             alt="Cocktail"
             width={500}
             height={500}
-            className="rounded-lg border-2 border-base-300 bg-base-200 p-2"
+            className="rounded-xl border border-1 bg-black p-1"
           />
         </div>
       </div>

@@ -69,7 +69,7 @@ export default function CocktailDetailsPage({
   return (
     <div className="container mx-auto p-4 md:w-3/4 lg:w-4/5 min-h-screen">
       <Heading title={cocktailDetails?.strDrink} iconClass="fas fa-cocktail" />
-      <div className="card bg-base-100 shadow-xl">
+      <div className="card bg-base-300 shadow-xl">
         <figure className="p-4">
           <Image
             src={cocktailDetails?.strDrinkThumb}
@@ -77,7 +77,7 @@ export default function CocktailDetailsPage({
             width={500}
             height={500}
             layout="responsive"
-            className="rounded-xl border border-base-300 bg-base-100 p-1"
+            className="rounded-xl border border-1 bg-black p-1"
           />
         </figure>
         <div className="card-body bg-base-300 border rounded-md drop-shadow-2xl">

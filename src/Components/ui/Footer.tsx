@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { FC } from 'react';
 import Link from 'next/link';
 import CopyrightNotice from './CopyrightNotice'; // Import the new component
@@ -30,11 +31,11 @@ const Footer: FC<Props> = ({ authorName, year }): JSX.Element => {
           {/* ... (existing SVG icons code) ... */}
         </div>
       </nav>
-      <Image
+      <img
         src="/images/logoDark.png"
         alt="logo"
-        width={50}
-        height={50}
+        width="50"
+        height="50"
         className="rounded-lg border-2 border-base-300 bg-none"
       />
       {/* Using the CopyrightNotice component */}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import { useState, useEffect, FormEvent } from 'react';
 import axios from 'axios';
@@ -97,13 +98,18 @@ export default function SearchDrinks() {
           >
             <div className="card-compact card-bordered cursor-pointer bg-base-300 rounded-lg m-2 border border-headline drop-shadow-2xl">
               <figure className="p-4">
-                <Image
+                <img
                   src={drink.strDrinkThumb}
                   alt={drink.strDrink}
-                  layout="responsive"
-                  width={500}
-                  height={500}
-                  className="rounded-xl border border-base-300 bg-base-100 p-1"
+                  style={{
+                    aspectRatio: '1/1',
+                    width: '400px',
+                    height: '400px',
+                    borderRadius: '1rem',
+                    border: '1px solid #D1D5DB',
+                    backgroundColor: '#F3F4F6',
+                    padding: '1px'
+                  }}
                 />
               </figure>
               <div className="card-body">

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -71,13 +72,18 @@ export default function CocktailDetailsPage({
       <Heading title={cocktailDetails?.strDrink} iconClass="fas fa-cocktail" />
       <div className="card bg-base-300 shadow-xl">
         <figure className="p-4">
-          <Image
+          <img
             src={cocktailDetails?.strDrinkThumb}
             alt={cocktailDetails?.strDrink}
-            width={500}
-            height={500}
-            layout="responsive"
-            className="rounded-xl border border-1 bg-black p-1"
+            style={{
+              width: '500px',
+              height: '500px',
+              objectFit: 'cover',
+              borderRadius: '1rem',
+              border: '1px solid',
+              backgroundColor: 'black',
+              padding: '1px'
+            }}
           />
         </figure>
         <div className="card-body bg-base-300 border rounded-md drop-shadow-2xl">

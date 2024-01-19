@@ -39,12 +39,10 @@ export default function Home() {
           </div>
         </div>
         <div className="inline-block max-w-xs mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
-          <Image
+          <img
             src="/images/cocktail.png"
             alt="Cocktail"
-            width={500}
-            height={500}
-            className="rounded-xl border border-1 bg-black p-1"
+            className="w-full h-auto rounded-xl border border-1 bg-black p-1"
           />
         </div>
       </div>

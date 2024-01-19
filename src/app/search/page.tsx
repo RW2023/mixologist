@@ -101,15 +101,7 @@ export default function SearchDrinks() {
                 <img
                   src={drink.strDrinkThumb}
                   alt={drink.strDrink}
-                  style={{
-                    aspectRatio: '1/1',
-                    width: '400px',
-                    height: '400px',
-                    borderRadius: '1rem',
-                    border: '1px solid #D1D5DB',
-                    backgroundColor: '#F3F4F6',
-                    padding: '1px'
-                  }}
+                  className="w-full h-auto rounded-xl border border-gray-300 bg-gray-200 p-1"
                 />
               </figure>
               <div className="card-body">

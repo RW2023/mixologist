@@ -75,15 +75,7 @@ export default function CocktailDetailsPage({
           <img
             src={cocktailDetails?.strDrinkThumb}
             alt={cocktailDetails?.strDrink}
-            style={{
-              width: '500px',
-              height: '500px',
-              objectFit: 'cover',
-              borderRadius: '1rem',
-              border: '1px solid',
-              backgroundColor: 'black',
-              padding: '1px'
-            }}
+            className="w-full h-auto object-cover rounded-xl border border-black bg-black p-1"
           />
         </figure>
         <div className="card-body bg-base-300 border rounded-md drop-shadow-2xl">

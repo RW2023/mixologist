@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -7,7 +6,6 @@ import Loading from '@/Components/ui/Loading';
 import Pending from '@/Components/ui/Pending';
 import Heading from '@/Components/ui/Heading';
 import SubHeading from '@/Components/ui/SubHeading';
-import Link from 'next/link';
 
 // Define the interface for a Cocktail object
 interface Cocktail {
@@ -55,14 +53,14 @@ export default function CocktailDetailsPage({
       if (ingredient) {
         ingredients.push(
           <p key={i}>
-            <i className="fas fa-check mr-2"></i>
+            <i className="fas fa-lemon mr-2"></i>
             {ingredient}
           </p>,
         );
       }
     }
     return ingredients;
-  };
+  }; 
 
   if (isLoading) return <Loading />;
   if (error) return <div>Error: {error}</div>;
@@ -71,12 +69,15 @@ export default function CocktailDetailsPage({
   return (
     <div className="container mx-auto p-4 md:w-3/4 lg:w-4/5 min-h-screen">
       <Heading title={cocktailDetails?.strDrink} iconClass="fas fa-cocktail" />
-      <div className="card bg-base-300 shadow-xl glass">
+      <div className="card bg-base-100 shadow-xl">
         <figure className="p-4">
-          <img
+          <Image
             src={cocktailDetails?.strDrinkThumb}
             alt={cocktailDetails?.strDrink}
-            className="w-full h-auto object-cover rounded-xl   bg-base-300 p-1 border border-1"
+            width={500}
+            height={500}
+            layout="responsive"
+            className="rounded-xl border border-base-300 bg-base-100 p-1"
           />
         </figure>
         <div className="card-body bg-base-300 border rounded-md drop-shadow-2xl">
@@ -106,12 +107,6 @@ export default function CocktailDetailsPage({
             </h3>
             {cocktailDetails && renderIngredients(cocktailDetails)}
           </div>
-          <Link href={'/search'}>
-            <button type="button" className="btn btn-primary">
-              <i className="fas fa-glass-cheers mr-2"></i>
-              Back to Search{' '}
-            </button>
-          </Link>
         </div>
       </div>
     </div>

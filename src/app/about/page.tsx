@@ -10,7 +10,7 @@ const About = () => {
         <div className="mt-16 md:mt-0 mb-16 grid grid-cols-1 md:grid-cols-2 gap-4 text-center w-full">
           {/* About section */}
           <div className="border drop-shadow-sm rounded-lg p-2 flex flex-col">
-            <Heading title="About Mixologist App" iconClass='fas fa-cocktail' />
+            <Heading title="About Mixologist" iconClass='fas fa-cocktail' />
             <div className="mt-6 text-left">
               <p className="mb-4 text-lg text-base-content">
                 Hi, I&apos;m Ryan a web developer! This is my Mixology web app

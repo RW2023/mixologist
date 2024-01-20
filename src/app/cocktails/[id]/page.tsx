@@ -70,12 +70,12 @@ export default function CocktailDetailsPage({
   return (
     <div className="container mx-auto p-4 md:w-3/4 lg:w-4/5 min-h-screen">
       <Heading title={cocktailDetails?.strDrink} iconClass="fas fa-cocktail" />
-      <div className="card bg-base-300 shadow-xl">
+      <div className="card bg-base-300 shadow-xl glass">
         <figure className="p-4">
           <img
             src={cocktailDetails?.strDrinkThumb}
             alt={cocktailDetails?.strDrink}
-            className="w-full h-auto object-cover rounded-xl border border-black bg-black p-1"
+            className="w-full h-auto object-cover rounded-xl   bg-base-300 p-1 border border-1"
           />
         </figure>
         <div className="card-body bg-base-300 border rounded-md drop-shadow-2xl">

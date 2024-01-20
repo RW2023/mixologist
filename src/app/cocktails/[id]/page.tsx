@@ -7,6 +7,7 @@ import Loading from '@/Components/ui/Loading';
 import Pending from '@/Components/ui/Pending';
 import Heading from '@/Components/ui/Heading';
 import SubHeading from '@/Components/ui/SubHeading';
+import Link from 'next/link';
 
 // Define the interface for a Cocktail object
 interface Cocktail {
@@ -61,7 +62,7 @@ export default function CocktailDetailsPage({
       }
     }
     return ingredients;
-  }; 
+  };
 
   if (isLoading) return <Loading />;
   if (error) return <div>Error: {error}</div>;
@@ -105,6 +106,12 @@ export default function CocktailDetailsPage({
             </h3>
             {cocktailDetails && renderIngredients(cocktailDetails)}
           </div>
+          <Link href={'/search'}>
+            <button type="button" className="btn btn-primary">
+              <i className="fas fa-glass-cheers mr-2"></i>
+              Back to Search{' '}
+            </button>
+          </Link>
         </div>
       </div>
     </div>

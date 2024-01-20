@@ -112,7 +112,7 @@ export default function CocktailDetailsPage({
     // Assuming the foodPairings array contains AI-generated suggestions
     return (
       <div className="mt-4 p-4 bg-base-100 rounded  border border-1 shadow-md">
-<SubHeading title="Food Pairings" iconClass="fas fa-utensils" />
+        <SubHeading title="Food Pairings" iconClass="fas fa-utensils" />
         <ul className="list-none pl-5">
           {foodPairings.map((pairing, index) => (
             <li key={index} className="mb-2">

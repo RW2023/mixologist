@@ -2,8 +2,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import LoadingAi from '@/Components/ui/Loading';
-import Loading from '@/Components/ui/Loading';
+import LoadingAi from '@/Components/ui/LoadingAi';
+import LoadingDetails from '@/Components/ui/LoadingDetails';
 import Pending from '@/Components/ui/Pending';
 import Heading from '@/Components/ui/Heading';
 import SubHeading from '@/Components/ui/SubHeading';
@@ -124,7 +124,7 @@ export default function CocktailDetailsPage({
     );
   };
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <LoadingDetails />;
   if (error) return <div>Error: {error}</div>;
   if (!cocktailDetails) return <Pending />;
 

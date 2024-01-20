@@ -9,7 +9,7 @@ const Loading: FC = (): JSX.Element => {
           <span className="m-2">
             <span className="loading loading-bars loading-lg min-"></span>
           </span>{' '}
-          Loading Drinks.....☝🏾 any second now...⏱️
+          Loading Drinks.....🍸...⏱️...🍹...🕝...🍷
         </p>
       </div>
     </div>

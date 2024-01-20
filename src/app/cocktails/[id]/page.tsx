@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingAi from '@/Components/ui/LoadingAi';
 import LoadingDetails from '@/Components/ui/LoadingDetails';
+import Loading from '@/Components/ui/Loading';
 import Pending from '@/Components/ui/Pending';
 import Heading from '@/Components/ui/Heading';
 import SubHeading from '@/Components/ui/SubHeading';
@@ -124,7 +125,7 @@ export default function CocktailDetailsPage({
     );
   };
 
-  if (isLoading) return <LoadingDetails />;
+  if (isLoading) return <Loading />;
   if (error) return <div>Error: {error}</div>;
   if (!cocktailDetails) return <Pending />;
 

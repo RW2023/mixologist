@@ -2,12 +2,12 @@
 'use client';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import LoadingAi from '@/Components/ui/Loading';
 import Loading from '@/Components/ui/Loading';
 import Pending from '@/Components/ui/Pending';
 import Heading from '@/Components/ui/Heading';
 import SubHeading from '@/Components/ui/SubHeading';
 import Link from 'next/link';
-import LoadingAi from '@/Components/ui/LoadingAi';
 
 // Define the interface for a Cocktail object
 interface Cocktail {
@@ -72,7 +72,7 @@ export default function CocktailDetailsPage({
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            message: `act as a expert chef. Suggest an ideal food pairings for the cocktail. Do not restate the prompt or your role. keep the response to a single paragraph "${
+            message: `Suggest food pairings for the cocktail "${
               cocktailDetails.strDrink
             }" with ingredients ${ingredients.join(', ')}`,
           }),
@@ -106,20 +106,25 @@ export default function CocktailDetailsPage({
   };
 
   const renderFoodPairings = () => {
-    if (aiLoading) return <Loading />;
+    if (aiLoading) return <LoadingAi />;
+    if (!foodPairings.length) return null;
+
+    // Assuming the foodPairings array contains AI-generated suggestions
     return (
-      <div>
+      <div className="mt-4 p-4 bg-base-100 rounded shadow">
         <h3 className="text-lg font-bold mb-2">Suggested Food Pairings</h3>
-        <ul>
+        <ul className="list-none pl-5">
           {foodPairings.map((pairing, index) => (
-            <li key={index}>{pairing}</li>
+            <li key={index} className="mb-2">
+              {pairing}
+            </li>
           ))}
         </ul>
       </div>
     );
   };
 
-  if (isLoading) return <LoadingAi />;
+  if (isLoading) return <Loading />;
   if (error) return <div>Error: {error}</div>;
   if (!cocktailDetails) return <Pending />;
 

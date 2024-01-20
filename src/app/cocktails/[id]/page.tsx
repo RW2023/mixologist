@@ -7,6 +7,7 @@ import Pending from '@/Components/ui/Pending';
 import Heading from '@/Components/ui/Heading';
 import SubHeading from '@/Components/ui/SubHeading';
 import Link from 'next/link';
+import LoadingAi from '@/Components/ui/LoadingAi';
 
 // Define the interface for a Cocktail object
 interface Cocktail {
@@ -71,7 +72,7 @@ export default function CocktailDetailsPage({
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            message: `Suggest food pairings for the cocktail "${
+            message: `act as a expert chef. Suggest an ideal food pairings for the cocktail. Do not restate the prompt or your role. keep the response to a single paragraph "${
               cocktailDetails.strDrink
             }" with ingredients ${ingredients.join(', ')}`,
           }),
@@ -118,7 +119,7 @@ export default function CocktailDetailsPage({
     );
   };
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <LoadingAi />;
   if (error) return <div>Error: {error}</div>;
   if (!cocktailDetails) return <Pending />;
 

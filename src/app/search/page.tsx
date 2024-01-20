@@ -69,7 +69,9 @@ export default function SearchDrinks() {
         />
         <button
           type="submit"
-          className={`btn btn-primary ${isLoading ? 'loading' : ''}`}
+          className={`btn btn-primary ${
+            isLoading ? 'loading loading-spinner text-info' : ''
+          }`}
         >
           {isLoading ? <Loading /> : 'Search'}
         </button>

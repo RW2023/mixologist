@@ -72,7 +72,7 @@ export default function CocktailDetailsPage({
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            message: `Suggest food pairings for the cocktail "${
+            message: `Suggest food pairings for the cocktail. Do not repeat the prompt or ingredients. Keep the response to a maximum of 600 characters"${
               cocktailDetails.strDrink
             }" with ingredients ${ingredients.join(', ')}`,
           }),

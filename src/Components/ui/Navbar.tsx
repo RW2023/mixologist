@@ -52,11 +52,12 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="flex items-center justify-between flex-wrap p-3 navbar mt-0 sticky top-0 z-20 bg-base-200 shadow-2xl bg-opacity-90"
+      className="flex items-center justify-between flex-wrap p-3 navbar mt-0 sticky top-0 z-20 bg-base-200 shadow-2xl bg-opacity-90 border-b-2"
       style={{ fontFamily: "'Poppins', sans-serif" }}
       initial="hidden"
       animate="show"
       variants={variants}
+      data-theme='black'
     >
       <div className="flex items-center flex-shrink-0 text-2xl mr-6">
         <Link href="/">
@@ -70,8 +71,8 @@ const Navbar = () => {
               <Image
                 src={'/images/navLogo.png'}
                 alt="Mixologist Logo"
-                width="60"
-                height="60"
+                width="80"
+                height="80"
                 className="rounded-full border-2 border-button mr-2"
               />
               {/* SubHeading */}

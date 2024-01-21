@@ -10,7 +10,6 @@ import Heading from '@/Components/ui/Heading';
 import SubHeading from '@/Components/ui/SubHeading';
 import Link from 'next/link';
 
-
 // Define the interface for a Cocktail object
 interface Cocktail {
   idDrink: string;
@@ -115,29 +114,13 @@ export default function CocktailDetailsPage({
     return (
       <div className="mt-4 p-4 bg-base-100 rounded  border border-1 shadow-md">
         <SubHeading title="Food Pairings" iconClass="fas fa-utensils" />
-
-        <div className="chat chat-start">
-          <div className="chat-image avatar">
-            <div className="w-10 rounded-full">
-              <img alt="chef" src="/images/android_chef.webp" />
-            </div>
-          </div>
-          <div className="chat-header"></div>
-          <div className="chat-bubble">
-            <ul className="list-none pl-5 ">
-              {foodPairings.map((pairing, index) => (
-                <li
-                  key={index}
-                  className="mb-2 rounded chat-start"
-                >
-                  {pairing}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p className="text-xl">AI assistant:</p>
-        </div>
-        <div className="chat chat-end"></div>
+        <ul className="list-none pl-5">
+          {foodPairings.map((pairing, index) => (
+            <li key={index} className="mb-2">
+              {pairing}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   };

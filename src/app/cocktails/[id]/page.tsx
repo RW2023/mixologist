@@ -113,6 +113,10 @@ export default function CocktailDetailsPage({
     // Assuming the foodPairings array contains AI-generated suggestions
     return (
       <div className="mt-4 p-4 bg-secondary text-base-300 rounded  border border-1 shadow-md">
+        <img 
+        src="/images/android_chef.webp" alt="Android Chef"
+        className='rounded border border-1 border-base-300 drop-shadow-sm mx-auto mb-4'
+        />
         <SubHeading title="Food Pairings" iconClass="fas fa-utensils" />
         <ul className="list-none pl-5">
           {foodPairings.map((pairing, index) => (

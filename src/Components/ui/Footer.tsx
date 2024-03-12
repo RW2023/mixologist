@@ -1,45 +1,34 @@
-/* eslint-disable @next/next/no-img-element */
-import { FC } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import CopyrightNotice from './CopyrightNotice'; // Import the new component
-import Image from 'next/image'; // Import the Image component
 
-// Modified Props interface to include authorName and year
-interface Props {
-  authorName: string;
-  year: number;
-
-}
-
-const Footer: FC<Props> = ({ authorName, year }): JSX.Element => {
+const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <footer className="footer footer-center p-10 bg-base-300 text-base-content rounded">
       <nav className="grid grid-flow-col gap-4">
-        <Link href={'/about'} className="link link-hover">
-          About us
-        </Link>
-        <Link href={'/contact'} className="link link-hover">
-          Contact
-        </Link>
-        <Link href={'/feedback'} className="link link-hover">
-          Feedback
-        </Link>
+        <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
+        <Link href="/feedback">Feedback</Link>
       </nav>
       <nav>
-        <div className="grid grid-flow-col gap-4">
-          {/* Social Media Icons */}
-          {/* ... (existing SVG icons code) ... */}
+        <div className="grid grid-flow-col gap-4 text-4xl">
+          {/* GitHub */}
+          <a
+            href="https://github.com/RW2023/"
+            target="https://github.com/RW2023/"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i className="fab fa-github"></i>
+            <span className="sr-only">GitHub Repo Button</span>
+          </a>
         </div>
       </nav>
-      <img
-        src="/images/logoDark.png"
-        alt="logo"
-        width="50"
-        height="50"
-        className="rounded-lg border-2 border-base-300 bg-none"
-      />
-      {/* Using the CopyrightNotice component */}
-      <CopyrightNotice year={year} authorName={authorName} />
+      <aside>
+        <p>
+          Copyright © 2023 - All rights reserved by
+          <span> Ryan Wilson</span>
+        </p>
+      </aside>
     </footer>
   );
 };

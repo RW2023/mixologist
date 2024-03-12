@@ -73,7 +73,7 @@ export default function CocktailDetailsPage({
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            message: `Suggest food pairings for the cocktail. Do not repeat the prompt or ingredients. Keep the response to a maximum of 600 characters"${
+            message: `Suggest food pairings for the cocktail. Do not repeat the prompt or ingredients. Keep the response to a maximum of 500 characters"${
               cocktailDetails.strDrink
             }" with ingredients ${ingredients.join(', ')}`,
           }),
@@ -112,7 +112,11 @@ export default function CocktailDetailsPage({
 
     // Assuming the foodPairings array contains AI-generated suggestions
     return (
-      <div className="mt-4 p-4 bg-base-100 rounded  border border-1 shadow-md">
+      <div className="mt-4 p-4 bg-secondary text-base-300 rounded  border border-1 shadow-md">
+        <img 
+        src="/images/android_chef.webp" alt="Android Chef"
+        className='rounded border border-1 border-base-300 drop-shadow-sm mx-auto mb-4'
+        />
         <SubHeading title="Food Pairings" iconClass="fas fa-utensils" />
         <ul className="list-none pl-5">
           {foodPairings.map((pairing, index) => (

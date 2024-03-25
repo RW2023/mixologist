@@ -49,7 +49,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
-        <Footer authorName={authorName} year={currentYear} />
+        <Footer />
       </body>
     </html>
   );

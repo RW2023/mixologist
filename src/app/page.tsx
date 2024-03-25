@@ -1,51 +1,18 @@
-import Heading from '@/Components/ui/Heading';
-import SubHeading from '@/Components/ui/SubHeading';
-import Image from 'next/image';
-import Link from 'next/link';
+import HomeContent from '@/Components/HomeContent';
+
 
 export default function Home() {
+const cocktail = '/images/cocktail.png';
+const cocktailAlt = 'Cocktail';
+const imageWidth = 500;
+const imageHight = 500;
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen container mx-auto px-4 sm:px-6 lg:px-8 mt-2">
-      {/* Added bottom margin for all views */}
-      <div className="mt-16 md:mt-0 mb-16 grid grid-cols-1 md:grid-cols-2 gap-4 text-center w-full">
-        <div className="border drop-shadow-sm rounded-lg p-2 flex flex-col bg-base-300 ">
-          <Heading title="cheers" iconClass="fas fa-wine-bottle" />
-          <SubHeading
-            title="Search for your favorite cocktail!"
-            iconClass="fas fa-search"
-          />
-          <div className="text-center mt-6">
-            <p className="mb-4 text-lg text-base-content text-left">
-              Find your favorite cocktail or search for a new one. You can also
-              search by ingredient! Whether you&apos;re looking for a classic
-              like a Margarita or something new and exciting, our extensive
-              database has you covered.
-            </p>
-            <p className="text-lg text-base-content text-left">
-              Explore cocktails by name, ingredient, or even randomly discover a
-              new favorite. Learn about the ingredients, preparation methods,
-              and the history behind each cocktail. Perfect for both cocktail
-              enthusiasts and beginners, our platform offers a fun and
-              interactive way to enhance your mixology skills.
-            </p>
-            <Link href="/search">
-              <button
-                type="button"
-                className="btn btn-primary rounded-lg text-3xl"
-              >
-                Enter the Bar
-              </button>
-            </Link>
-          </div>
-        </div>
-        <div className="inline-block max-w-xs mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
-          <img
-            src="/images/cocktail.png"
-            alt="Cocktail"
-            className="w-full h-auto rounded-xl border border-1 bg-black p-1"
-          />
-        </div>
-      </div>
-    </div>
+    <HomeContent 
+    imageWidth={imageWidth}
+    imageHight={imageHight}
+    img={cocktail}
+    alt={cocktailAlt}
+    />
   );
 }

@@ -1,11 +1,18 @@
-import HomepageContent from '@/Components/HomepageContent';
-import Hero from '@/Components/ui/Hero';
+import HomeContent from '@/Components/HomeContent';
 
 
 export default function Home() {
+const cocktail = '/images/cocktail.png';
+const cocktailAlt = 'Cocktail';
+const imageWidth = 500;
+const imageHight = 500;
+
   return (
-  <Hero img='/images/cocktail.png'>
-    <HomepageContent />
-  </Hero>
+    <HomeContent 
+    imageWidth={imageWidth}
+    imageHight={imageHight}
+    img={cocktail}
+    alt={cocktailAlt}
+    />
   );
 }

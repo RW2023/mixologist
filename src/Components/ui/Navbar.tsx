@@ -71,8 +71,8 @@ const Navbar = () => {
               <Image
                 src={'/images/navLogo.png'}
                 alt="Mixologist Logo"
-                width="80"
-                height="80"
+                width="60"
+                height="60"
                 className="rounded-full border-2 border-button mr-2"
               />
               {/* SubHeading */}
